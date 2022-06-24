@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap');
+
+* {
+	margin: 0;
+	
+	scroll-behavior: smooth;
+}
+
+body {
+	display: flex;
+
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	background: linear-gradient(to bottom right, #B5838D 0%, #FFCDB2 100%) fixed;
+	color: #ebe8f0;
+
+	font-family: 'Josefin Slab', serif;
+
+	width: 100vw;
+	height: 100vh;
+}
+
+.container {
+	display: flex;
+
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 25vw;
+	height: 30vh;
+}
+
+.background {
+	display: flex;
+
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 4em;
+
+	background: #B5838DAA;
+	
+	width: 75vw;
+	height: 60vh;
+	
+	border: 1px solid #3331;
+	border-radius: 1em;
+
+	box-shadow: 8px 8px 2em #6D687555;
+}
+
+.info {
+	align-items: flex-start;
+}
+
+.info button {
+	background: linear-gradient(to right, #6D687522 0%, #6D687533 100%);
+	color: #ebe8f0;
+	
+	width: 10vw;
+	height: 5vh;
+
+	outline: none;
+	overflow: hidden;
+	
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 1.5em;
+
+	margin-top: 1em;
+	margin-left: 1.5em;
+	border: 1px solid #3331;
+	border-radius: 1em;
+
+	transition: all 0.2s ease-in-out;
+}
+
+.info button:enabled .button_text {
+	position: relative;
+
+	animation: text_from_left 1s forwards;
+}
+
+@keyframes text_from_left {
+	0% {
+		left: 0em
+	}
+
+	50% {
+		left: -10em
+	}
+
+	100% {
+		left: 0em
+	}
+}
+
+.info button:disabled .button_text {
+	position: relative;
+
+	animation: text_from_right 1s forwards;
+}
+
+@keyframes text_from_right {
+	0% {
+		left: 0em
+	}
+
+	50% {
+		left: 10em
+	}
+
+	100% {
+		left: 0em
+	}
+}
+
+.info button:hover {
+	backdrop-filter: brightness(0.95);
+}
+
+.info button:active {
+	backdrop-filter: brightness(0.9);
+}
+
+.display textarea {
+	width: 100%;
+	height: 100%;
+
+	background: linear-gradient(to top, #6D687500 0%, #6D687511 100%);
+	color: #ebe8f0;
+	
+	resize: none;
+	outline: none;
+	
+	scroll-behavior: smooth;
+	
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 3.5em;
+	text-transform: lowercase;
+	
+	border: none;
+	border-radius: 1em;
+
+	padding: 1em;
+
+	transition: all 0.2s ease-in-out;
+}
+
+.display textarea::selection {
+	background-color: #362a2a33;
+	padding: 1em;
+}
+
+.display textarea:focus {
+	backdrop-filter: brightness(0.95);
+	box-shadow: 8px 8px 1em #6D687511;
+}
+
+.display textarea::-webkit-scrollbar {
+	display: none;
+}
+
+.title {
+	font-family: 'Josefin Slab', serif;
+	font-size: 5rem;
+
+	animation: title_color 4s infinite forwards;
+}
+
+@keyframes title_color {
+	0% {
+		color: #e0d7f0;
+	}
+	25% {
+		color: #f0d7e8;
+	}
+	50% {
+		color: #f0d7d9;
+	}
+	75% {
+		color: #d7e6f0;
+	}
+	100% {
+		color: #d9d7f0;
+	}
+}
