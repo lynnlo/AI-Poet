@@ -18,6 +18,7 @@ body {
 	color: #ebe8f0;
 
 	font-family: 'Josefin Slab', serif;
+	font-size: min(1rem, 1.5vw);
 
 	width: 100vw;
 	height: 100vh;
@@ -40,12 +41,12 @@ body {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: 4em;
+	gap: 2em;
 
 	background: #B5838DAA;
 	
-	width: 75vw;
-	height: 60vh;
+	width: min(80vw, 140em);
+	height: min(80vh, 60em);
 	
 	border: 1px solid #3331;
 	border-radius: 1em;
@@ -53,8 +54,24 @@ body {
 	box-shadow: 8px 8px 2em #6D687555;
 }
 
+@media screen and (max-width: 800px){
+	.background {
+		flex-direction: column;
+		
+		gap: 0em;
+	}
+}
+
 .info {
 	align-items: flex-start;
+
+	height: min(80%, 60em);
+}
+
+@media screen and (max-width: 800px){
+	.info {
+		height: min(40%, 40em);
+	}
 }
 
 .info button {
@@ -68,7 +85,7 @@ body {
 	overflow: hidden;
 	
 	font-family: 'Cormorant Garamond', serif;
-	font-size: 1.5em;
+	font-size: min(1.5rem, 2vw);
 
 	margin-top: 1em;
 	margin-left: 1.5em;
@@ -76,6 +93,15 @@ body {
 	border-radius: 1em;
 
 	transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 800px){
+	.info button {
+		width: 20vw;
+		height: 5vh;
+
+		margin: 1em;
+	}
 }
 
 .info button:enabled .button_text {
@@ -126,6 +152,12 @@ body {
 	backdrop-filter: brightness(0.9);
 }
 
+@media screen and (max-width: 800px){
+	.display {
+		width: min(40vw, 60em);
+	}
+}
+
 .display textarea {
 	width: 100%;
 	height: 100%;
@@ -139,7 +171,7 @@ body {
 	scroll-behavior: smooth;
 	
 	font-family: 'Cormorant Garamond', serif;
-	font-size: 3.5em;
+	font-size: min(4rem, 4vw);
 	text-transform: lowercase;
 	
 	border: none;
@@ -166,9 +198,14 @@ body {
 
 .title {
 	font-family: 'Josefin Slab', serif;
-	font-size: 5rem;
+	font-size: min(5rem, 4vw);
 
 	animation: title_color 4s infinite forwards;
+}
+
+.subtitle {
+	font-family: 'Josefin Slab', serif;
+	font-size: min(1.5rem, 1.5vw);
 }
 
 @keyframes title_color {
