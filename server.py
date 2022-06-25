@@ -1,6 +1,7 @@
 import http.server
 import socketserver
 import configparser
+import urllib
 
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
@@ -8,7 +9,7 @@ import tensorflow.keras as keras
 import numpy as np
 
 config = configparser.ConfigParser()
-config.read('model_v3_2/model.conf')
+config.read('model_v4/model.conf')
 
 model = keras.models.load_model(config.get('model', 'model'))
 print(f"Loaded Model: {model}")
@@ -19,9 +20,9 @@ class Server(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path.startswith('/api/request/'):
             data = self.path.replace('/api/request/', '')
-            data = data.replace("%20", " ")
+            data = urllib.parse.unquote(data)
             message = data
-            size = 24
+            size = 36
 
             print(message)
             for _ in range(size):
@@ -32,7 +33,7 @@ class Server(http.server.BaseHTTPRequestHandler):
                 message += ' ' + tokenizer.index_word[index]
             
             message = message[len(data):]
-            message = message.replace(".", ". ").replace(".  ", ". ")
+            message = message.replace(".", ". ").replace("\n\n", "\n").replace("\r\n", "\\r\\n").replace("  ", " ")
             
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')

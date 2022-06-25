@@ -45,7 +45,7 @@ body {
 
 	background: #B5838DAA;
 	
-	width: min(80vw, 140em);
+	width: min(80vw, 120em);
 	height: min(80vh, 60em);
 	
 	border: 1px solid #3331;
@@ -171,7 +171,7 @@ body {
 	scroll-behavior: smooth;
 	
 	font-family: 'Cormorant Garamond', serif;
-	font-size: min(4rem, 4vw);
+	font-size: min(3rem, 4vw);
 	text-transform: lowercase;
 	
 	border: none;
