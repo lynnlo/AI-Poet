@@ -1,5 +1,5 @@
 language = "bash"
-run = "pip install tensorflow==2.4.1 && python server.py"
+run = "python server.py"
 
 [packager]
 ignoredPackages=["tensorflow"]

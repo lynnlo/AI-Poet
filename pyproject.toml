@@ -9,7 +9,9 @@ description = ""
 name = "repl_python3_AI-Poet"
 version = "0.1.0"
 [tool.poetry.dependencies]
-keras = "^2.9.0"
-numpy = "^1.23.0"
+numpy = "1.19.2"
 python = "^3.8"
+tensorflow-cpu = "2.4.0"
+tensorboard = "2.4.0"
+protobuf = "3.20.1"
 [tool.poetry.dev-dependencies]

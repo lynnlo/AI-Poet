@@ -9,7 +9,7 @@ import tensorflow.keras as keras
 import numpy as np
 
 config = configparser.ConfigParser()
-config.read('model_v4/model.conf')
+config.read('model_v4_2/model.conf')
 
 model = keras.models.load_model(config.get('model', 'model'))
 print(f"Loaded Model: {model}")
@@ -22,7 +22,7 @@ class Server(http.server.BaseHTTPRequestHandler):
             data = self.path.replace('/api/request/', '')
             data = urllib.parse.unquote(data)
             message = data
-            size = 36
+            size = 24
 
             print(message)
             for _ in range(size):
